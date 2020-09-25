@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/AmmyR/ColoredChat
+build-by-default: true
+branches:
+- master
+projects:
+  ColoredChat:
+    path: "/"
+    icon: ColoredChat.PNG
+...
