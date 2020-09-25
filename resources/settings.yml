@@ -1,0 +1,18 @@
+---
+# Plugin created by AmmyR (https://github.com/AmmyR)
+# Settings file - ColoredChat
+
+## Indicates the version of the settings. DO NOT MODIFY (your file could be deleted)
+Config-Version: 1.0
+
+## Sets the colors to be used in the chat
+# You can see a complete list of colors here: https://www.digminecraft.com/lists/sign_color_list_bedrock.php
+Colors:
+  - "a"
+  - "e"
+  - "6"
+  - "7"
+  - "f"
+  - "c"
+  - "b"
+...

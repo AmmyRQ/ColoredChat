@@ -1,0 +1,10 @@
+name: ColoredChat
+author: AmmyR
+version: 1.0.0
+api: 3.0.0
+main: AmmyR\ColoredChat\Main
+website: https://twitter.com/AmmyRQ
+permissions:
+  coloredchat:
+    description: Allows to use colored chat.
+    default: op
