@@ -1,4 +1,5 @@
 # ColoredChat
+A simple plugin that allows you to write in different colors in the chat!
 ## How to use?
 You only need have the permission "coloredchat" and type something in the chat.
 
