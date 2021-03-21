@@ -67,7 +67,7 @@ class EventListener implements Listener {
 		if($player->hasPermission("coloredchat"))
 		{
 			$colorList = Main::getSettings()->get("Colors"); //Array
-			$message = $ev->getMessage();
+			$message = $event->getMessage();
 
 			$storedColors = [];
 			for($i = 0; $i < mb_strlen($message); $i++)
@@ -81,7 +81,7 @@ class EventListener implements Listener {
 			}
 
 			$newMessage = implode($coloredString);
-			$ev->setMessage($newMessage);
+			$event->setMessage($newMessage);
 		}
 	}
 }
