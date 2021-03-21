@@ -11,8 +11,11 @@ class Main extends PluginBase {
 
 	private const CONFIG_VERSION = 1.0;
 	private static $instance = null;
-
-	public static function getInstance()
+	
+	/**
+	 * @return self
+	 */
+	public static function getInstance() : self
 	{
 		return self::$instance;
 	}
@@ -63,18 +66,22 @@ class EventListener implements Listener {
 
 		if($player->hasPermission("coloredchat"))
 		{
-			$colorsList = Main::getSettings()->get("Colors"); //Array
-			$message = $event->getMessage();
-			$splitedString = str_split($message);
+			$colorList = Main::getSettings()->get("Colors"); //Array
+			$message = $ev->getMessage();
 
-			foreach($splitedString as $coloredMessage)
+			$storedColors = [];
+			for($i = 0; $i < mb_strlen($message); $i++)
 			{
-				$randomColor = array_rand($colorsList);
-				$splitedString[array_search($coloredMessage, $splitedString)] = "§" . $randomColor . $coloredMessage;
+				$splitedString = mb_substr($message, $i, 1);
+				$rand = array_rand($colorList);
+
+				$randomColor = $colorList[$rand];
+
+				$coloredString[$i] = "§" . $randomColor . $splitedString;
 			}
 
-			$newMessage = implode($splitedString);
-			$event->setMessage($newMessage);
+			$newMessage = implode($coloredString);
+			$ev->setMessage($newMessage);
 		}
 	}
 }
